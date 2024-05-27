@@ -11,11 +11,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      devShell.${system} = pkgs.mkShellNoCC {
+      devShell.${system} = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
         packages = with pkgs; [
-          gnumake
-          clang
           clang-tools
+          gnumake
+          cmake
+          cmake-language-server
         ];
       };
     };

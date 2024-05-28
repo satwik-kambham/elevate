@@ -22,12 +22,19 @@ size_t Shape::len() {
   return l;
 }
 
-Tensor::Tensor(Shape *shape) {
+Tensor::Tensor(Shape *shape, int fill) {
   this->shape = shape;
   this->data = new int[this->shape->len()];
+  this->fill(fill);
 }
 
 void Tensor::print() {
   std::cout << "Shape: ";
   this->shape->print();
+}
+
+void Tensor::fill(int value) {
+  for (size_t i = 0; i < this->shape->len(); i++) {
+    this->data[i] = value;
+  }
 }

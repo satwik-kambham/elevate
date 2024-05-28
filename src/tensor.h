@@ -17,6 +17,7 @@ class Tensor {
   Shape *shape;
 
 public:
-  Tensor(Shape *shape);
+  Tensor(Shape *shape, int fill = 0);
   void print();
+  void fill(int value);
 };

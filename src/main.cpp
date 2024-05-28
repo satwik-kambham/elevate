@@ -1,8 +1,10 @@
-#include <iostream>
-#include "lib.h"
+#include "tensor.h"
 
 int main() {
-  std::cout << "Hello\n";
-  std::cout << sum(5, 6) << std::endl;
+  int* s = new int[]{1, 2, 3};
+  Shape *shape = new Shape(s, 3);
+  Tensor t(shape);
+  t.print();
+
   return 0;
 }

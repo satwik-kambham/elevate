@@ -1,3 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
 project(Elevate)
-add_executable(Elevate src/main.cpp src/lib.cpp src/lib.h)
+add_executable(Elevate src/main.cpp src/tensor.cpp src/tensor.h)
+add_compile_options()
+target_compile_options(Elevate PUBLIC -Wall -Wextra -Wpedantic -O3)
